@@ -1,0 +1,63 @@
+# Installing Docker on CentOS 7
+# Akhil Uthaman
+
+# update the package database
+yum check-update
+
+# add the official Docker repository, download the latest version of Docker, and install it
+curl -fsSL https://get.docker.com/ | sh
+
+# Start the docker service
+systemctl start docker
+
+# Confirm that it is running 
+systemctl status docker
+
+# Force it to start at every server reboot
+systemctl enable docker
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXX Basic Docker Commands
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# Check docker version
+docker version
+
+# Search for an image in docker repo
+docker search centos
+
+# Pull an image from docker repo
+docker pull centos
+
+# Run a docker container
+docker run containerID
+docker run -it containerID    // To get interactive shell access into the container // 
+
+# Once changes are made to any container to save the changes exit from the container
+exit
+docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name  // need to commit to ssave the changes
+
+# List running containers
+docker ps
+
+# List all active and exited containers
+docker ps -a
+
+# To start an exited container
+docker start containerID
+
+# To stop an active container
+docker stop containerID
+docker kill containerID
+
+# To delete an exited container
+docker rm containerID
+
+
+# List all images on server
+docker images
+
+# to remove any docker image from machine 
+docker image rm imagename
+
