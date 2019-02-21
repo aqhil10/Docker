@@ -1,0 +1,9 @@
+Can install nagios server by following the steps in below link:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-16-04
+
+Or pull this docker image and running it
+
+docker pull akhiluthaman/nagios-server-centos
+
+(https://hub.docker.com/r/akhiluthaman/nagios-server-centos)
